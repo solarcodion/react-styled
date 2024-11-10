@@ -55,7 +55,7 @@ const UserContent = styled.p`
 const Divider = styled.div`
   width: 100%;
   border-top: 0.5px solid;
-  border-color: gray;
+  border-color: #5d636a;
   margin: ${(props) => (props.small ? `16px 0` : `24px 0`)};
 `;
 
