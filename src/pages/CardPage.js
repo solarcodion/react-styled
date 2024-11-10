@@ -29,13 +29,19 @@ const Cards = styled.div`
 `;
 
 const CardPage = () => {
+  const data = {
+    username: "Mina Le",
+    role: "Admin",
+    phone: "+44 83829182",
+    email: "email@gmail.com",
+  };
   return (
     <Root>
       <CardContainer>
         <CardTitle>Card of person</CardTitle>
         <Cards>
-          <UserCard small={false} />
-          <UserCard small={true} />
+          <UserCard data={data} small={false} />
+          <UserCard data={data} small={true} />
         </Cards>
       </CardContainer>
     </Root>

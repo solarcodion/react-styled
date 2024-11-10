@@ -5,11 +5,13 @@ import { MdOutlineMail } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
 import CustomButton from "../StyledButton";
 
+import "@fontsource/manrope";
+
 const Card = styled.div`
   width: ${(props) => (props.small ? `160px` : `240px`)};
   height: ${(props) => (props.small ? `221px` : `319px`)};
-  border: 1px solid;
-  border-color: gray;
+  border: 2px solid;
+  border-color: #f2f2f2;
   border-radius: 20px;
   padding: 20px;
 `;
@@ -36,17 +38,18 @@ const User = styled.div`
 const UserTitle = styled.p`
   text-align: center;
   margin-bottom: 6px;
+  font-family: "Manrope", sans-serif;
   font-size: ${(props) => (props.small ? `14px` : `16px`)};
-  font-color: black;
-  font-weight: bold;
+  font-weight: 600;
   margin: 0 0 12px 0;
 `;
 
 const UserContent = styled.p`
   text-align: center;
   margin: 0px;
+  font-family: "Manrope", sans-serif;
   font-size: ${(props) => (props.small ? `14px` : `16px`)};
-  font-color: #5d636a;
+  color: #5d636a;
 `;
 
 const Divider = styled.div`
@@ -60,7 +63,7 @@ const StyledDropdown = styled(BiDotsHorizontalRounded)`
   position: absolute;
   top: 0;
   right: 0;
-  color: gray;
+  color: #5d636a;
 `;
 
 const CardBody = styled.div`
@@ -74,16 +77,20 @@ const Contact = styled.div`
   padding: 3px 0;
 `;
 
-const ContactContent = styled.div``;
+const ContactContent = styled.div`
+  font-family: "Manrope", sans-serif;
+  color: #5d636a;
+  font-size: ${(props) => (props.small ? `12px` : `14px`)};
+`;
 
-export const UserCard = ({ small }) => {
+export const UserCard = ({ data, small }) => {
   return (
     <Card small={small}>
       <CardHeader small={small}>
         <Avatar src={avatar} alt="avatar" small={small} />
         <User small={small}>
-          <UserTitle small={small}>Mina Le</UserTitle>
-          <UserContent small={small}>Admin</UserContent>
+          <UserTitle small={small}>{data.username}</UserTitle>
+          <UserContent small={small}>{data.role}</UserContent>
         </User>
         <CustomButton small={small}>Active</CustomButton>
         <StyledDropdown size={small ? 20 : 40} />
@@ -92,11 +99,11 @@ export const UserCard = ({ small }) => {
       <CardBody small={small}>
         <Contact small={small}>
           <FiPhone color="gray" />
-          <ContactContent small={small}>+44 83829182</ContactContent>
+          <ContactContent small={small}>{data.phone}</ContactContent>
         </Contact>
         <Contact>
           <MdOutlineMail color="gray" />
-          <ContactContent small={small}>email@gmail.com</ContactContent>
+          <ContactContent small={small}>{data.email}</ContactContent>
         </Contact>
       </CardBody>
     </Card>
