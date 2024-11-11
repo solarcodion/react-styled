@@ -3,15 +3,13 @@ import styled from "styled-components";
 import "@fontsource/manrope";
 
 const StyledBtn = styled.button`
-  width: ${(props) => (props.small ? `67px` : `76px`)};
-  height: ${(props) => (props.small ? `20px` : `23px`)};
-  padding: 2px 8px;
-  border-radius: 6px;
+  padding: ${(props) => (props.small ? `2px 8px` : `4px 12px`)};
+  border-radius: ${(props) => (props.small ? `6px` : `8px`)};
   background-color: #ffe6fa;
   color: #140446;
   font-family: "Manrope", sans-serif;
-  font-size: ${(props) => (props.small ? `11px` : `14px`)};
-  line-height: 130%;
+  font-size: ${(props) => (props.small ? `12px` : `14px`)};
+  line-height: ${(props) => (props.small ? `140%` : `130%`)};
   font-weight: 600;
   border: none;
   cursor: pointer;

@@ -8,21 +8,20 @@ import CustomButton from "../StyledButton";
 import "@fontsource/manrope";
 
 const Card = styled.div`
-  width: ${(props) => (props.small ? `160px` : `240px`)};
-  height: ${(props) => (props.small ? `221px` : `319px`)};
+  width: ${(props) => (props.small ? `200px` : `280px`)};
+  height: ${(props) => (props.small ? `261px` : `359px`)};
   border: 2px solid;
   border-color: #f2f2f2;
   border-radius: 20px;
-  padding: 20px;
 `;
 
 const CardHeader = styled.div`
   position: relative;
-  width: ${(props) => (props.small ? `168px` : `240px`)};
-  height: ${(props) => (props.small ? `145px` : `211px`)};
+  margin: ${(props) => (props.small ? `16px 16px 0 16px` : `20px 20px 0 20px`)};
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: ${(props) => (props.small ? `12px` : `16px`)};
 `;
 
 const Avatar = styled.img`
@@ -32,16 +31,18 @@ const Avatar = styled.img`
 `;
 
 const User = styled.div`
-  margin: ${(props) => (props.small ? `12px 0` : `16px 0`)};
+  display: flex;
+  flex-direction: column;
+  gap: ${(props) => (props.small ? `4px` : `6px`)};
 `;
 
 const UserTitle = styled.p`
   text-align: center;
-  margin-bottom: 6px;
+  margin: 0px;
   font-family: "Manrope", sans-serif;
   font-size: ${(props) => (props.small ? `14px` : `16px`)};
+  color: #140446;
   font-weight: 600;
-  margin: 0 0 12px 0;
 `;
 
 const UserContent = styled.p`
@@ -53,10 +54,9 @@ const UserContent = styled.p`
 `;
 
 const Divider = styled.div`
-  width: 100%;
   border-top: 0.5px solid;
   border-color: #5d636a;
-  margin: ${(props) => (props.small ? `16px 0` : `24px 0`)};
+  margin: ${(props) => (props.small ? `16px 20px` : `24px 20px`)};
 `;
 
 const StyledDropdown = styled(BiDotsHorizontalRounded)`
@@ -67,14 +67,16 @@ const StyledDropdown = styled(BiDotsHorizontalRounded)`
 `;
 
 const CardBody = styled.div`
-  margin: ${(props) => (props.small ? `15px 0` : `30px 0`)};
+  margin: ${(props) => (props.small ? `0 16px 16px 16px` : `0 20px 20px 20px`)};
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 `;
 
 const Contact = styled.div`
   display: flex;
-  gap: 5px;
+  gap: 8px;
   align-items: center;
-  padding: 3px 0;
 `;
 
 const ContactContent = styled.div`
@@ -93,7 +95,7 @@ export const UserCard = ({ data, small }) => {
           <UserContent small={small}>{data.role}</UserContent>
         </User>
         <CustomButton small={small}>Active</CustomButton>
-        <StyledDropdown size={small ? 20 : 40} />
+        <StyledDropdown size={small ? 16 : 24} />
       </CardHeader>
       <Divider small={small} />
       <CardBody small={small}>

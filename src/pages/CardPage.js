@@ -25,7 +25,7 @@ const Cards = styled.div`
   border-color: #9747ff;
   border-radius: 5px;
   padding: 35px 0 0 0;
-  gap: 10px;
+  gap: 43px;
 `;
 
 const CardPage = () => {
